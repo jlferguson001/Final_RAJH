@@ -3,9 +3,10 @@ import { Row, Col } from 'react-bootstrap'
 import Developer from '../components/Developer'
 import developers from '../developers'
 import Product from '../components/Product'
-
+ 
+ 
 const HomeScreen = () => {
-  const [products, setProducts] = useState(null)
+   const [products, setProducts] = useState(null)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -13,7 +14,7 @@ const HomeScreen = () => {
       const json = await response.json()
 
       if (response.ok) {
-        setProducts(json)
+         setProducts(json)
       }
     }
 

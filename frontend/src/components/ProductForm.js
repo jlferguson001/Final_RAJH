@@ -1,8 +1,5 @@
 import { useState } from "react"
-
-
  
-
 const ProductForm = () => {
     const [name, setName] = useState('')
     const [image, setImage] = useState('')
@@ -42,6 +39,8 @@ const ProductForm = () => {
             setColor('')
             setPrice('')
             setCountInStock('')
+            setRating('')
+            setNumReviews('')
             setError(null)
             console.log('new workout added, json')
         }
