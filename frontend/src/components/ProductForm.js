@@ -1,7 +1,5 @@
 import { useState } from "react"
-
  
-
 const ProductForm = () => {
     const [name, setName] = useState('')
     const [image, setImage] = useState('')
@@ -21,7 +19,7 @@ const ProductForm = () => {
         const product ={name, image, description, brand, category, color, price, countInStock, rating, numReviews }
 
         const response = await fetch('/api/products', {
-            method:  'Post',
+            method:  'POST',
             body: JSON.stringify(product),
             headers: {
                 'Content-Type': 'application/json'
@@ -39,6 +37,10 @@ const ProductForm = () => {
             setBrand('')
             setCategory('')
             setColor('')
+            setPrice('')
+            setCountInStock('')
+            setRating('')
+            setNumReviews('')
             setError(null)
             console.log('new workout added, json')
         }
@@ -46,7 +48,7 @@ const ProductForm = () => {
     
     return (
         <form className='create' onSubmit= {handleSubmit}>
-            <h3> Product Form </h3>
+            <h3> Add a Product Form </h3>
 
             <label> Frame Name/Model Number</label>
             <input
@@ -109,6 +111,7 @@ const ProductForm = () => {
             value={numReviews}
             />
             <button>Add Product</button>
+            {error && <div className="error">{error}</div>}
            
         </form>
   )
