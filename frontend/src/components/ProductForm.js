@@ -19,7 +19,7 @@ const ProductForm = () => {
         const product ={name, image, description, brand, category, color, price, countInStock, rating, numReviews }
 
         const response = await fetch('/api/products', {
-            method:  'Post',
+            method:  'POST',
             body: JSON.stringify(product),
             headers: {
                 'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ const ProductForm = () => {
     
     return (
         <form className='create' onSubmit= {handleSubmit}>
-            <h3> Product Form </h3>
+            <h3> Add a Product Form </h3>
 
             <label> Frame Name/Model Number</label>
             <input
