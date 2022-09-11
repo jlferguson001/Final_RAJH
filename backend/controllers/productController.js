@@ -8,6 +8,13 @@ const getProducts = async (req, res) => {
   res.status(200).json(products)
 }
 
+//get all products for a list
+const getProductsList = async (req, res) => {
+  const products = await Product.find({}) 
+
+  res.status(200).json(products)
+}
+
 //get all mens products
 const getProductsMens = async (req, res) => {
   const products = await Product.find({category: 'Mens'})
@@ -132,6 +139,7 @@ const product = await Product.findOneAndUpdate({_id: id}, {
 module.exports = {
   createProduct,
   getProducts,
+  getProductsList,
   getProduct,
   getProductsMens,
   getProductsWomens,

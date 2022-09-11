@@ -6,6 +6,8 @@
  import MensScreen from './screens/MensScreen';
  import WomensScreen from './screens/WomensScreen';
  import ChildrensScreen from './screens/ChildrensScreen';
+ import ProductListScreen from './screens/ProductListScreen'
+ import ProductScreen from './screens/ProductScreen'
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route exact path='/products/Mens' element={<MensScreen />} />
             <Route exact path='/products/Womens' element={<WomensScreen />} />
             <Route exact path='/products/Childrens' element={<ChildrensScreen />} />
+            <Route exact path='/products/productslist' element={<ProductListScreen />} />
+            <Route exact path='/products/:id' element={<ProductScreen />} />
             
             
           </Routes>
@@ -31,3 +35,4 @@ function App() {
 }
 
 export default App;
+ 

@@ -1,11 +1,14 @@
 const express = require('express')
-const { createProduct, getProduct, getProducts, getProductsMens, getProductsWomens, getProductsChildrens, deleteProduct, updateProduct } = require('../controllers/productController')
+const { createProduct, getProduct, getProducts, getProductsMens, getProductsWomens, getProductsChildrens, deleteProduct, updateProduct, getProductsList } = require('../controllers/productController')
 
 
 const router = express.Router()
 
 //Get all products
 router.get('/', getProducts )
+
+//Get all products for list
+router.get('/productslist', getProductsList )
 
 //Get all Mens
 router.get('/Mens', getProductsMens)
