@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+
  
 
 const ProductForm = () => {
@@ -39,6 +40,8 @@ const ProductForm = () => {
             setBrand('')
             setCategory('')
             setColor('')
+            setPrice('')
+            setCountInStock('')
             setError(null)
             console.log('new workout added, json')
         }
@@ -109,6 +112,7 @@ const ProductForm = () => {
             value={numReviews}
             />
             <button>Add Product</button>
+            {error && <div className="error">{error}</div>}
            
         </form>
   )

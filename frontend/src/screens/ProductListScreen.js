@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Table, Button } from 'react-bootstrap'
 
+import ProductForm from '../components/ProductForm'
+
 const ProductListScreen = () => {
   const [products, setProducts] = useState(null)
 
@@ -25,6 +27,7 @@ const ProductListScreen = () => {
           <tr>
             <th>ID</th>
             <th>NAME</th>
+            <th>IMAGE</th>
             <th>BRAND</th>
             <th>CATEGORY</th>
             <th>COLOR</th>
@@ -37,6 +40,7 @@ const ProductListScreen = () => {
               <tr key={products._id}>
                 <td>{products._id}</td>
                 <td>{products.name}</td>
+                <td>{products.image}</td>
                 <td>{products.brand}</td>
                 <td>{products.category}</td>
                 <td>{products.color}</td>
@@ -56,14 +60,11 @@ const ProductListScreen = () => {
             ))}
         </tbody>
       </Table>
+      <ProductForm />
     </>
   )
 }
 
 export default ProductListScreen
 
-//                               </tr>
-
-//                 ))}
-// </tbody>
-// </Table>
+ 
