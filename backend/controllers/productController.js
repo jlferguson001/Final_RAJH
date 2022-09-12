@@ -74,6 +74,41 @@ const createProduct = async (req, res) => {
        numReviews,
      } = req.body
      
+    //  let emptyFields = []
+     
+    //  if(!name){
+    //   emptyFields.push('name')
+    //  }
+    //  if(!image){
+    //   emptyFields.push('image')
+    //  }
+    //  if(!description){
+    //   emptyFields.push('description')
+    //  }
+    //  if(!brand){
+    //   emptyFields.push('brand')
+    //   }
+    //  if(!category){
+    //   emptyFields.push('category')
+    //  }
+    //  if(!color){
+    //   emptyFields.push('color')
+    //  }
+    //  if(!price){
+    //   emptyFields.push('price')
+    //  }
+    //  if(!countInStock){
+    //   emptyFields.push('countInStock')
+    //  }
+    //  if(!rating){
+    //   emptyFields.push('rating')
+    //  }
+    //  if(!numReviews){
+    //   emptyFields.push('numReviews')
+    //  }
+    //  if(emptyFields.length >0) {
+    //   return res.status(400).json({ error: 'Please fill in all the fields', emptyFields})
+    //  }
      // add doc to db
      try {
        const product = await Product.create({

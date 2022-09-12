@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useProductsContext } from "../hooks/useProductsContext"
+import { Button } from "react-bootstrap"
  
 const ProductForm = () => {
     const {dispatch } = useProductsContext()
@@ -14,6 +15,7 @@ const ProductForm = () => {
     const [rating, setRating] = useState('')
     const [numReviews, setNumReviews] = useState('')
     const [error, setError] = useState(null)
+    // const [emptyFields, setEmptyFields] = useState ([])
     
     const handleSubmit= async (e) => {
         e.preventDefault()
@@ -31,8 +33,10 @@ const ProductForm = () => {
 
         if(!response.ok) {
             setError(json.error)
+            // setEmptyFields(json.emptyFields)
         }
         if (response.ok){
+            // setEmptyFields([])
             setName('')
             setImage('')
             setDescription('')
@@ -44,80 +48,93 @@ const ProductForm = () => {
             setRating('')
             setNumReviews('')
             setError(null)
+            
             console.log('new workout added')
             dispatch({type: 'CREATE_PRODUCT', payload: json})
         }
     }
     
     return (
-        <form className='create' onSubmit= {handleSubmit}>
-            <h3> Add a Product Form </h3>
+      <form className='create' onSubmit={handleSubmit}>
+        <h3> Add a Product Form </h3>
 
-            <label> Frame Name/Model Number</label>
-            <input
-            type='text'
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-            />
-            <label> Image Location </label>
-            <input
-            type='text'
-            onChange={(e) => setImage(e.target.value)}
-            value={image}
-            />
-            <label> Description </label>
-            <input
-            type='text'
-            onChange={(e) => setDescription(e.target.value)}
-            value={description}
-            />
-            <label> Brand </label>
-            <input
-            type='text'
-            onChange={(e) => setBrand(e.target.value)}
-            value={brand}
-            />
-            <label>Category</label>
-            <input
-            type='text'
-            onChange={(e) => setCategory(e.target.value)}
-            value={category}
-            />
-            <label> Color </label>
-            <input
-            type='text'
-            onChange={(e) => setColor(e.target.value)}
-            value={color}
-            />
-            <label> Price </label>
-            <input
-            type='Number'
-            onChange={(e) => setPrice(e.target.value)}
-            value={price}
-            />
-            <label> Number in Stock </label>
-            <input
-            type='Number'
-            onChange={(e) => setCountInStock(e.target.value)}
-            value={countInStock}
-            />
-            <label> Rating </label>
-            <input
-            type='Number'
-            onChange={(e) => setRating(e.target.value)}
-            value={rating}
-            />
-            <label> numReviews</label>
-            <input
-            type='Number'
-            onChange={(e) => setNumReviews(e.target.value)}
-            value={numReviews}
-            />
-            <button>Add Product</button>
-            {error && <div className="error">{error}</div>}
-           
-        </form>
-  )
+        <label> Frame Name/Model Number</label>
+        <input
+          type='text'
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+          //   className={emptyFields.includes('name') ? 'error' : ''}
+        />
+        <label> Image Location </label>
+        <input
+          type='text'
+          onChange={(e) => setImage(e.target.value)}
+          value={image}
+          //   className={emptyFields.includes('image') ? 'error' : ''}
+        />
+        <label> Description </label>
+        <input
+          type='text'
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
+          //   className={emptyFields.includes('description') ? 'error' : ''}
+        />
+        <label> Brand </label>
+        <input
+          type='text'
+          onChange={(e) => setBrand(e.target.value)}
+          value={brand}
+          //   className={emptyFields.includes('brand') ? 'error' : ''}
+        />
+        <label>Category</label>
+        <input
+          type='text'
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          //   className={emptyFields.includes('category') ? 'error' : ''}
+        />
+        <label> Color </label>
+        <input
+          type='text'
+          onChange={(e) => setColor(e.target.value)}
+          value={color}
+          //   className={emptyFields.includes('color') ? 'error' : ''}
+        />
+        <label> Price </label>
+        <input
+          type='Number'
+          onChange={(e) => setPrice(e.target.value)}
+          value={price}
+          //   className={emptyFields.includes('price') ? 'error' : ''}
+        />
+        <label> Number in Stock </label>
+        <input
+          type='Number'
+          onChange={(e) => setCountInStock(e.target.value)}
+          value={countInStock}
+          //   className={emptyFields.includes('countInStock') ? 'error' : ''}
+        />
+        <label> Rating </label>
+        <input
+          type='Number'
+          onChange={(e) => setRating(e.target.value)}
+          value={rating}
+          //   className={emptyFields.includes('rating') ? 'error' : ''}
+        />
+        <label> # of Reviews</label>
+        <input
+          type='Number'
+          onChange={(e) => setNumReviews(e.target.value)}
+          value={numReviews}
+          //   className={emptyFields.includes('numReviews') ? 'error' : ''}
+        />
+        <button>Add Product</button>   
+        
+             
+        {error && <div className='error'>{error}</div>}
+      </form>
+      
+    ) 
 }
 
 export default ProductForm
