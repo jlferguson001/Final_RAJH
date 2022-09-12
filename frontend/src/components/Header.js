@@ -18,9 +18,9 @@ const Header = () => {
             </Nav>
             <Nav className='ms-auto'>
               {/* importing icons from font awesome, import was saved in index.html */}
-              <Nav.Link href='/cart'>
+              {/* <Nav.Link href='/cart'>
                 <i className='fas fa-shopping-cart'></i>Cart
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link href='/products/productslist'>
                 <i>Product List</i>
               </Nav.Link>

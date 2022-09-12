@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { useProductsContext } from "../hooks/useProductsContext"
 import { Button } from "react-bootstrap"
+
+//have t
  
-const ProductForm = () => {
+const EditForm = () => {
     const {dispatch } = useProductsContext()
     const [name, setName] = useState('')
     const [image, setImage] = useState('')
@@ -23,7 +25,7 @@ const ProductForm = () => {
         const product ={name, image, description, brand, category, color, price, countInStock, rating, numReviews }
 
         const response = await fetch('/api/products', {
-            method:  'POST',
+            method:  'PATCH',
             body: JSON.stringify(product),
             headers: {
                 'Content-Type': 'application/json'
@@ -50,13 +52,18 @@ const ProductForm = () => {
             setError(null)
             
             console.log('new workout added')
-            dispatch({type: 'CREATE_PRODUCT', payload: json})
+            dispatch({type: 'UPDATE_PRODUCT', payload: json})
         }
     }
     
     return (
       <form className='create' onSubmit={handleSubmit}>
-        <h3> Add a Product Form </h3>
+        <h3> Update Product Form </h3>
+
+        <label>Product Id* Required</label>
+        <input
+        type='text'
+        required/>
 
         <label> Frame Name/Model Number</label>
         <input
@@ -128,7 +135,8 @@ const ProductForm = () => {
           value={numReviews}
           //   className={emptyFields.includes('numReviews') ? 'error' : ''}
         />
-        <button>Add Product</button>   
+        
+        <button>Update Product</button>   
         
         
              
@@ -138,4 +146,4 @@ const ProductForm = () => {
     ) 
 }
 
-export default ProductForm
+export default EditForm
