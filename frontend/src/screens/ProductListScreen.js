@@ -3,6 +3,7 @@ import{useProductsContext} from '../hooks/useProductsContext'
 
 import ProductDetails from '../components/ProductDetails'
 import ProductForm from "../components/ProductForm"
+import EditForm from "../components/EditForm"
 
 const ProductListScreen = () => {
   const {products, dispatch} = useProductsContext()
@@ -29,7 +30,10 @@ const ProductListScreen = () => {
             <ProductDetails key= {product._id} product={product}/>
           ))}
         </div>
+        <div>
         <ProductForm />
+        <EditForm />
+        </div>
       </div>
     )
 }

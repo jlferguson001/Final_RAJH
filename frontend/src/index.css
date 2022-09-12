@@ -59,7 +59,7 @@ header a {
   position: absolute;
   top: 20px;
   right: 20px;
-  cursor: pointer;
+    cursor: pointer;
   background: #f1f1f1;
   padding: 6px;
   border-radius: 50%;
@@ -81,6 +81,7 @@ input {
 form button {
   background: var(--primary);
   border: 0;
+  margin: 15px;
   color: #fff;
   padding: 10px;
   font-family: "Poppins";
