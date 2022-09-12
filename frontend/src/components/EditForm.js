@@ -24,7 +24,7 @@ const EditForm = () => {
 
         const product ={name, image, description, brand, category, color, price, countInStock, rating, numReviews }
 
-        const response = await fetch('/api/products', {
+        const response = await fetch('/api/products/${id}', {
             method:  'PATCH',
             body: JSON.stringify(product),
             headers: {
@@ -51,13 +51,13 @@ const EditForm = () => {
             setNumReviews('')
             setError(null)
             
-            console.log('new workout added')
+            console.log('updated product added')
             dispatch({type: 'UPDATE_PRODUCT', payload: json})
         }
     }
     
     return (
-      <form className='create' onSubmit={handleSubmit}>
+      <form className='update' onSubmit={handleSubmit}>
         <h3> Update Product Form </h3>
 
         <label>Product Id* Required</label>

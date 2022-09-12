@@ -49,7 +49,7 @@ const ProductForm = () => {
             setNumReviews('')
             setError(null)
             
-            console.log('new workout added')
+            console.log('new product added')
             dispatch({type: 'CREATE_PRODUCT', payload: json})
         }
     }
