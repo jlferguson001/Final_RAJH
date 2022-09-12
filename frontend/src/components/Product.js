@@ -5,25 +5,32 @@ import Rating from './Rating'
 
 const Product = (props) => {
   return (
-    <Card className='my-3 p-3 rounded'>
+    <Card className='my-3 p-3 rounded h-100'>
       <Link to={`/product/${props.product._id}`}>
         <Card.Img src={props.product.image} variant='top' />
       </Link>
 
       <Card.Body>
-        <Link to={`/product/${props.product._id}`}>
-          <Card.Title as='div'>
-            <strong>{props.product.name}</strong>
-          </Card.Title>
-        </Link>
+        {/* <Link to={`/product/${props.product._id}`}> */}
+        <Card.Title as='div'>
+          <strong>{props.product.name}</strong>
+          <hr />
+          {props.product.category}
+          <hr />
+        </Card.Title>
+        {/* </Link> */}
         <Card.Text>
           <div className='my-3'>
-            {props.product.category + '  ' + props.product.brand}
-            
+            {props.product.brand}
+            <hr />${props.product.price}
+            <hr />
           </div>
         </Card.Text>
         <Card.Text>
-            <Rating  value={props.product.rating} text = {`${props.product.numReviews} reviews`}/>
+          <Rating
+            value={props.product.rating}
+            text={`${props.product.numReviews} reviews`}
+          />
         </Card.Text>
         {/* <Card.Text as='h3'>${props.product.price}
 

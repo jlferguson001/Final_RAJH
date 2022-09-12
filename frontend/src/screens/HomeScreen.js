@@ -30,7 +30,7 @@ const HomeScreen = () => {
             </Col>
           ))}
       </Row>
-      
+      <hr/>
       <h1>Your Developers</h1>
       <Row>
         {developers.map((developer) => (

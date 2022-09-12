@@ -15,11 +15,11 @@ const ProductDetails = ({product}) => {
       }
     }
     return (
-      <Table striped bordered hover variant='light' responsive='md'>
+      <Table striped bordered hover variant='light' responsive='md' attribute='data-align'>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
+            <th >ID</th>
+            <th >Name</th>
             <th>Brand</th>
             <th>Category</th>
             <th>Color Name</th>
