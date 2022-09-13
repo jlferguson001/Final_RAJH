@@ -32,7 +32,6 @@ const ProductListScreen = () => {
       </div>
       <div>
         <ProductForm />
-        <EditForm />
       </div>
     </div>
   )
