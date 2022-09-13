@@ -12,7 +12,7 @@ const ProductScreen = ({history, match}) => {
   const [ product, setProduct] = useState(null)
   useEffect(() => {
     const fetchProduct = async () => {
-      const response = await fetch('api/product/:id')
+      const response = await fetch('api/products/:id')
       const json = await response.json()
 
       if(response.ok) {

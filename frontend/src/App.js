@@ -8,6 +8,7 @@ import WomensScreen from './screens/WomensScreen'
 import ChildrensScreen from './screens/ChildrensScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductScreen from './screens/ProductScreen'
+import EditForm from './components/EditForm'
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
               path='/products/productslist'
               element={<ProductListScreen />}
             />
-            <Route exact path='/products/:id' element={<ProductScreen />} />
+            <Route exact path='/api/products/:id' element={<ProductScreen />} />
+            <Route exact path='/api/products/:id/edit' element={<EditForm />} />
           </Routes>
         </Container>
         <Footer />

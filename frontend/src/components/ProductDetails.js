@@ -1,8 +1,13 @@
 import { useProductsContext } from '../hooks/useProductsContext'
 import { Button, Table } from 'react-bootstrap'
+import { useNavigate } from 'react-router'
 
 const ProductDetails = ({ product }) => {
   const { dispatch } = useProductsContext()
+  let navigate = useNavigate()
+  function editPlace() {
+		navigate(`/api/products/${product._id}/edit`)
+	}
 
   const handleClick = async () => {
     const response = await fetch('/api/products/' + product._id, {
@@ -32,8 +37,8 @@ const ProductDetails = ({ product }) => {
           <th>Color Name</th>
           <th>Price</th>
 
-          <th>Delete</th>
           <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -46,19 +51,20 @@ const ProductDetails = ({ product }) => {
           <td>${product.price}</td>
 
           <td>
+            <span onClick={editPlace}>
+              <Button variant='light' className='btn-sm'>
+                <i className='fas fa-edit'></i>
+              </Button>
+            </span>
+          </td>
+          <td>
             <span onClick={handleClick}>
               <Button variant='danger' className='btn-sm'>
                 <i className='fas fa-trash'></i>
               </Button>
             </span>
           </td>
-          <td>
-            <span>
-              <Button variant='light' className='btn-sm'>
-                <i className='fas fa-edit'></i>
-              </Button>
-            </span>
-          </td>
+          
         </tr>
       </tbody>
     </Table>
