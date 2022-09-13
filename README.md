@@ -38,7 +38,8 @@ We replaced the cart with a product list page that includes:
 3.  Update , the edit button in the Product list screen takes the user to an edit form - at the time of this ReadMe file the Update Product button on the Edit 
     Form is not sending the appropriate product id - however is making a patch request as displayed in the terminal : /api/products/$%7Bid%7D PATCH 
 4.  Deleting the product id select from the database/application
-    When clicking on the Category of Men’s, Women’s, and Children’s we were able to only show those specific categories.
+    
+When clicking on the Category of Men’s, Women’s, and Children’s we were able to only show those specific categories.
 
 We did have an issue with displaying individual products, however, since we started over in a different format, however, that was not the main goal or focus this round.
 
