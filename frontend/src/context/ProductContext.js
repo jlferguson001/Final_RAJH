@@ -18,8 +18,8 @@ export const productsReducer = (state, action) => {
             }
         case 'UPDATE_PRODUCT':
             return {
-              products: action.payload
-               
+              products:  action.payload._id
+              
             }
         default:
             return state

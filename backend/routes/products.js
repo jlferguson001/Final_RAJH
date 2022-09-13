@@ -1,5 +1,5 @@
 const express = require('express')
-const { createProduct, getProduct, getProducts, getProductsMens, getProductsWomens, getProductsChildrens, deleteProduct, updateProduct, getProductsList } = require('../controllers/productController')
+const { createProduct, getProduct, getProducts, getProductsMens, getProductsWomens, getProductsChildrens, deleteProduct, updateProduct,  getProductsList } = require('../controllers/productController')
 
 
 const router = express.Router()
@@ -30,5 +30,6 @@ router.delete('/:id', deleteProduct )
 
 //edit/update product
 router.patch('/:id', updateProduct)
+
 
 module.exports = router

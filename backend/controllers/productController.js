@@ -169,6 +169,7 @@ const product = await Product.findOneAndUpdate({_id: id}, {
     
 }
 
+ 
 
 
 module.exports = {
@@ -180,5 +181,6 @@ module.exports = {
   getProductsWomens,
   getProductsChildrens,
   deleteProduct, 
-  updateProduct
+  updateProduct,
+   
 }
